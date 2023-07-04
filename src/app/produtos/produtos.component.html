@@ -1,0 +1,16 @@
+<h2>Produtos</h2>
+<form [formGroup]="produtoForm" (ngSubmit)="adicionarProduto()">
+  <div class="form-group">
+    <label for="nomeProduto">Nome:</label>
+    <input type="text" class="form-control" id="nomeProduto" formControlName="nome" required>
+  </div>
+  <div class="form-group">
+    <label for="precoProduto">Preço:</label>
+    <input type="number" class="form-control" id="precoProduto" formControlName="preco" required>
+  </div>
+  <div class="form-group">
+    <label for="descricaoProduto">Descrição:</label>
+    <textarea class="form-control" id="descricaoProduto" formControlName="descricao" rows="3" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Adicionar Produto</button>
+</form>

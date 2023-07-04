@@ -1,0 +1,12 @@
+<h2>Clientes</h2>
+<form [formGroup]="clienteForm" (ngSubmit)="adicionarCliente()">
+  <div class="form-group">
+    <label for="nomeCliente">Nome: </label>
+    <input type="text" class="form-control" id="nomeCliente" formControlName="nome" required>
+  </div>
+  <div class="form-group">
+    <label for="dataNascimentoCliente">Data de Nascimento: </label>
+    <input type="date" class="form-control" id="dataNascimentoCliente" formControlName="dataNascimento" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Adicionar Cliente</button>
+</form>

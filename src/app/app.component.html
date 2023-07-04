@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="container">
+  <h1 class="text-center">Sistema de Gerenciamento de Mercado</h1>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/clientes" routerLinkActive="active">Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/produtos" routerLinkActive="active">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/compras" routerLinkActive="active">Compras</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+  <div class="mt-4" *ngIf="!showPopup || mesSelecionado">
+    <label for="mes" class="d-block text-center mb-2">Selecione o mês:</label>
+    <select id="mes" [(ngModel)]="mesSelecionado" (change)="verificarGanhador()" class="form-control">
+      <option value="1">Janeiro</option>
+      <option value="2">Fevereiro</option>
+      <option value="3">Março</option>
+      <option value="4">Abril</option>
+      <option value="5">Maio</option>
+      <option value="6">Junho</option>
+      <option value="7">Julho</option>
+      <option value="8">Agosto</option>
+      <option value="9">Setembro</option>
+      <option value="10">Outubro</option>
+      <option value="11">Novembro</option>
+      <option value="12">Dezembro</option>
+    </select>
+  </div>
+  <div *ngIf="showPopup" class="popup mt-4">
+    Parabéns! {{ ganhadorBrinde }} é o ganhador do brinde do mês.
+  </div>
+</div>
+
